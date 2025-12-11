@@ -4,86 +4,138 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Techspire</title>
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
-      crossorigin="anonymous"
-    />
     <link href="./style.css" rel="stylesheet" />
   </head>
   <body>
-    <nav class="navbar navbar-expand-lg navbar-custom">
-      <div class="container-fluid">
-        <a class="navbar-brand" href="#">
+    <nav class="navbar">
+      <div class="nav-container">
+        <div class="nav-brand">
           <img
             src="./Tech Club color tr_20251203_133530_0000.png"
             alt="Techspire"
-            class="navbar-logo"
-            height="40"
-            width="40"
+            class="logo"
           />
-          Techspire
-        </a>
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-bs-toggle="collaps"
-          data-bs-target="#navbarSupportedContent"
-          aria-controls="navbarSupportedContent"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="#">Home</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Club Members</a>
-            </li>
-            <li class="nav-item dropdown">
-              <a
-                class="nav-link dropdown-toggle"
-                href="#"
-                role="button"
-                data-bs-toggle="dropdown"
-                aria-expanded="false"
-              >
-                Events
-              </a>
-              <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="#">CodeArena</a></li>
-                <li><a class="dropdown-item" href="#">Hack The Web</a></li>
-                <li><hr class="dropdown-divider" /></li>
-                <li>
-                  <a class="dropdown-item" href="#">Zephyr</a>
-                </li>
-              </ul>
-            </li>
-          </ul>
-          <form class="d-flex" role="search">
-            <input
-              class="form-control me-2"
-              type="search"
-              placeholder="Search"
-              aria-label="Search"
-            />
-            <button class="btn btn-outline-success" type="submit">
-              Search
-            </button>
-          </form>
+          <span>Techspire</span>
         </div>
+        <ul class="nav-links">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#members">Members</a></li>
+          <li><a href="#events">Events</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
       </div>
     </nav>
-    <div class="heroes"></div>
-    <div class="footer"></div>
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
-      crossorigin="anonymous"
-    ></script>
+
+    <section id="home" class="hero">
+      <div class="hero-content">
+        <h1>Welcome to Techspire</h1>
+        <p class="subtitle">Innovate. Create. Inspire.</p>
+        <p class="description">
+          Techspire is your technical community dedicated to fostering
+          innovation and excellence in technology. Join us for groundbreaking
+          events, workshops, and networking opportunities.
+        </p>
+        <button
+          class="btn-explore"
+          onclick="window.location.href='events-discovery.html'"
+        >
+          Explore Events
+        </button>
+      </div>
+    </section>
+
+    <section id="events" class="events-section">
+      <h2>Past Events</h2>
+      <p class="section-subtitle">
+        Celebrating our achievements and innovations
+      </p>
+
+      <div class="events-container">
+        <div class="event-card">
+          <div class="event-icon"></div>
+          <h3>CodeArena</h3>
+          <p>
+            A competitive programming event where participants showcase their
+            problem-solving skills and compete for prizes.
+          </p>
+          <div class="event-tags">
+            <span class="tag">Explore</span>
+          </div>
+        </div>
+
+        <div class="event-card">
+          <div class="event-icon"></div>
+          <h3>Navkriti</h3>
+          <p>
+            Technical fest featuring hackathons, workshops, and talks by
+            industry experts. A platform for creativity and innovation.
+          </p>
+          <div class="event-tags">
+            <span class="tag">Explore</span>
+          </div>
+        </div>
+
+        <div class="event-card">
+          <div class="event-icon"></div>
+          <h3>Zephyr</h3>
+          <p>
+            A showcase of cutting-edge projects and innovations. Experience the
+            future of technology through live demonstrations.
+          </p>
+          <div class="event-tags">
+            <span class="tag">Explore</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    
+    <footer id="contact" class="footer">
+      <div class="footer-content">
+        <div class="footer-section">
+          <h3>Techspire</h3>
+          <p>
+            Join our technical community and be part of innovation and
+            excellence.
+          </p>
+        </div>
+
+        <div class="footer-section">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#events">Events</a></li>
+            <li><a href="#members">Club Members</a></li>
+            <li><a href="#">About Us</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-section">
+          <h4>Events</h4>
+          <ul>
+            <li><a href="#">CodeArena</a></li>
+            <li><a href="#">Navkriti</a></li>
+            <li><a href="#">Zephyr</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-section">
+          <h4>Contact Us</h4>
+          <p>
+            <strong>Email:</strong>
+            <a href="mailto:techspire@college.edu">techspire@college.edu</a>
+          </p>
+          <p>
+            <strong>Phone:</strong>
+            <a href="tel:+91-9876543210">+91-9876543210</a>
+          </p>
+          <p><strong>Location:</strong> Tech Block, Campus</p>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2025 Techspire - Technical Club. All rights reserved.</p>
+      </div>
+    </footer>
   </body>
 </html>

@@ -1,0 +1,55 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+
+
+.navbar-custom {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    padding: 1rem 0;
+}
+
+.navbar-custom .navbar-brand {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #fff !important;
+    letter-spacing: 0.5px;
+}
+
+.navbar-custom .nav-link {
+    color: rgba(255, 255, 255, 0.9) !important;
+    margin-left: 1.5rem;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.navbar-custom .nav-link:hover {
+    color: #fff !important;
+}
+
+.navbar-custom .nav-link.active {
+    color: #fff !important;
+}
+
+.navbar-custom .form-control {
+    background-color: rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: #fff;
+}
+
+.navbar-custom .form-control::placeholder {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.navbar-custom .btn-outline-success {
+    color: #fff;
+    border-color: #fff;
+}
+
+.navbar-custom .btn-outline-success:hover {
+    background-color: #fff;
+    border-color: #fff;
+    color: #667eea;
+}

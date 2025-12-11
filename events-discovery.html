@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Events - Techspire</title>
+    <link href="./style.css" rel="stylesheet" />
+    <style>
+      .disc-header {
+        background: #000208;
+        color: white;
+        padding: 2rem;
+        text-align: center;
+      }
+      .disc-header h1 {
+        font-size: 2rem;
+        margin: 0;
+      }
+      .disc-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 2rem;
+      }
+      .tabs,
+      .filters {
+        display: flex;
+        gap: 1rem;
+        margin-bottom: 2rem;
+        flex-wrap: wrap;
+      }
+      .tab-btn,
+      .filter-btn {
+        padding: 0.5rem 1rem;
+        border: none;
+        cursor: pointer;
+        border-radius: 4px;
+        font-size: 0.9rem;
+      }
+      .tab-btn {
+        background: #667eea;
+        color: white;
+      }
+      .tab-btn.active {
+        background: #3259e8;
+      }
+      .filter-btn {
+        border: 2px solid #667eea;
+        background: white;
+        color: #667eea;
+      }
+      .filter-btn.active {
+        background: #667eea;
+        color: white;
+      }
+      .events {
+        display: grid;
+        gap: 1.5rem;
+      }
+      .event-item {
+        background: #f5f5f5;
+        border-left: 4px solid #3259e8;
+        padding: 1.5rem;
+        border-radius: 4px;
+        display: grid;
+        grid-template-columns: 1fr auto;
+        gap: 1rem;
+      }
+      .event-item.past {
+        opacity: 0.5;
+      }
+      .event-title {
+        font-size: 1.3rem;
+        color: #000208;
+        margin: 0 0 0.5rem 0;
+      }
+      .event-date {
+        color: #666;
+        font-size: 0.9rem;
+        margin: 0;
+      }
+      .event-desc {
+        color: #666;
+        margin: 0.8rem 0;
+        line-height: 1.5;
+      }
+      .event-tags {
+        display: flex;
+        gap: 0.5rem;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        margin-bottom: 0.8rem;
+      }
+      .badge {
+        background: #667eea;
+        color: white;
+        padding: 0.3rem 0.7rem;
+        border-radius: 15px;
+        font-size: 0.8rem;
+      }
+      .rsvp-btn {
+        padding: 0.6rem 1.2rem;
+        background: #4caf50;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        font-weight: 500;
+      }
+      .rsvp-btn:hover {
+        background: #45a049;
+      }
+      .count {
+        color: #666;
+        font-size: 0.9rem;
+      }
+      .back {
+        margin-top: 2rem;
+      }
+      .back a {
+        color: #3259e8;
+        text-decoration: none;
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="nav-container">
+        <div class="nav-brand">
+          <img
+            src="./Tech Club color tr_20251203_133530_0000.png"
+            alt="Techspire"
+            class="logo"
+          />
+          <span>Techspire</span>
+        </div>
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="index.html#members">Members</a></li>
+          <li><a href="index.html#events">Events</a></li>
+          <li><a href="index.html#contact">Contact</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <div class="disc-header">
+      <h1>Events Discovery</h1>
+    </div>
+
+    <div class="disc-container">
+      <div class="tabs">
+        <button class="tab-btn active" onclick="filterType('upcoming')">
+          Upcoming
+        </button>
+        <button class="tab-btn" onclick="filterType('past')">Past</button>
+      </div>
+
+      <div class="filters">
+        <button class="filter-btn active" onclick="filterTag('all')">
+          All
+        </button>
+        <button class="filter-btn" onclick="filterTag('workshops')">
+          Workshops
+        </button>
+        <button class="filter-btn" onclick="filterTag('hackathons')">
+          Hackathons
+        </button>
+        <button class="filter-btn" onclick="filterTag('talks')">Talks</button>
+      </div>
+
+      <div class="events" id="eventsList">
+        <div class="event-item" data-type="upcoming" data-tag="hackathons">
+          <div>
+            <div class="event-tags">
+              <span class="badge">Hackathons</span
+              ><span class="badge">Coding</span>
+            </div>
+            <h3 class="event-title">CodeArena 2025</h3>
+            <p class="event-date">Jan 15, 2025 - 10:00 AM</p>
+            <p class="event-desc">
+              Competitive programming event with prizes and networking.
+            </p>
+          </div>
+          <div style="text-align: center">
+            <button class="rsvp-btn">Save Your Spot</button>
+            <p class="count">45 going</p>
+          </div>
+        </div>
+
+        <div class="event-item" data-type="upcoming" data-tag="workshops">
+          <div>
+            <div class="event-tags">
+              <span class="badge">Workshops</span
+              ><span class="badge">Talks</span>
+            </div>
+            <h3 class="event-title">Navkriti 2025</h3>
+            <p class="event-date">Feb 20, 2025 - 2:00 PM</p>
+            <p class="event-desc">
+              Technical fest with workshops, hackathons, and expert talks.
+            </p>
+          </div>
+          <div style="text-align: center">
+            <button class="rsvp-btn">Save Your Spot</button>
+            <p class="count">120 going</p>
+          </div>
+        </div>
+
+        <div class="event-item" data-type="upcoming" data-tag="talks">
+          <div>
+            <div class="event-tags">
+              <span class="badge">Talks</span
+              ><span class="badge">Showcase</span>
+            </div>
+            <h3 class="event-title">Zephyr Showcase</h3>
+            <p class="event-date">Mar 10, 2025 - 3:00 PM</p>
+            <p class="event-desc">
+              Project showcase featuring live demonstrations and innovations.
+            </p>
+          </div>
+          <div style="text-align: center">
+            <button class="rsvp-btn">Save Your Spot</button>
+            <p class="count">89 going</p>
+          </div>
+        </div>
+
+        <div class="event-item past" data-type="past" data-tag="talks">
+          <div>
+            <div class="event-tags">
+              <span class="badge">Talks</span>
+            </div>
+            <h3 class="event-title">Code Summit 2024</h3>
+            <p class="event-date">Dec 5, 2024</p>
+            <p class="event-desc">
+              Annual coding conference on web dev, AI, and cloud tech.
+            </p>
+          </div>
+          <div style="text-align: center">
+            <p class="count">230 attended</p>
+          </div>
+        </div>
+
+        <div class="event-item past" data-type="past" data-tag="workshops">
+          <div>
+            <div class="event-tags">
+              <span class="badge">Workshops</span>
+            </div>
+            <h3 class="event-title">Python Workshop</h3>
+            <p class="event-date">Nov 12-14, 2024</p>
+            <p class="event-desc">
+              Three-day workshop on Python basics and web development.
+            </p>
+          </div>
+          <div style="text-align: center">
+            <p class="count">85 attended</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="back">
+        <a href="index.html">← Back to Home</a>
+      </div>
+    </div>
+
+    <script>
+      let type = "upcoming",
+        tag = "all";
+
+      function filterType(t) {
+        type = t;
+        update();
+        document
+          .querySelectorAll(".tab-btn")
+          .forEach((b) => b.classList.remove("active"));
+        event.target.classList.add("active");
+      }
+
+      function filterTag(t) {
+        tag = t;
+        update();
+        document
+          .querySelectorAll(".filter-btn")
+          .forEach((b) => b.classList.remove("active"));
+        event.target.classList.add("active");
+      }
+
+      function update() {
+        document.querySelectorAll(".event-item").forEach((e) => {
+          const match =
+            e.getAttribute("data-type") === type &&
+            (tag === "all" || e.getAttribute("data-tag") === tag);
+          e.style.display = match ? "grid" : "none";
+        });
+      }
+    </script>
+  </body>
+</html>
